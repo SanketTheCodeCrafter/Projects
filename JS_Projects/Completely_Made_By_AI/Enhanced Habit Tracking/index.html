@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Habit Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Habit Tracker</h1>
+            <div id="date-display"></div>
+        </header>
+        <nav>
+            <button class="nav-link active" data-target="habit-section">Tracker</button>
+            <button class="nav-link" data-target="analytics-page">Analytics</button>
+            <button class="nav-link" data-target="settings-page">Settings</button>
+        </nav>
+        <main>
+            <section id="habit-section" class="page active">
+                <div id="habit-form" class="card">
+                    <input type="text" id="habit-input" placeholder="Enter a new habit">
+                    <button id="add-habit-btn"><i class="fas fa-plus"></i> Add Habit</button>
+                </div>
+                <div id="habit-list" class="card">
+                    <!-- Habits will be added here -->
+                </div>
+            </section>
+            <section id="analytics-page" class="page">
+                <div id="analytics-toggle" class="card">
+                    <button id="weekly-toggle" class="toggle-btn active">Weekly</button>
+                    <button id="monthly-toggle" class="toggle-btn">Monthly</button>
+                </div>
+                <section id="weekly-view" class="card analytics-view">
+                    <h2>Weekly Habit Performance</h2>
+                    <div id="weekly-overview" class="weekly-overview">
+                        <!-- Summary of weekly performance -->
+                    </div>
+                    <div id="weekly-performance-grid"></div> <!-- Weekly performance grid -->
+                </section>
+                
+                <section id="monthly-view" class="card analytics-view" style="display: none;">
+                    <h2>Monthly Habit Summary</h2>
+                    <div id="monthly-summary-grid"></div> <!-- New grid to show habit summaries -->
+                </section>
+                
+                <div id="habit-analytics" class="card">
+                    <h2>Habit Analytics</h2>
+                    <div id="analytics-content"></div>
+                </div>
+            </section>
+            <section id="settings-page" class="page">
+                <div class="card">
+                    <h2>Settings</h2>
+                    <div id="theme-selector">
+                        <h3>Choose Theme</h3>
+                        <button class="theme-btn" data-theme="default">Default</button>
+                        <button class="theme-btn" data-theme="dark">Dark</button>
+                        <button class="theme-btn" data-theme="nature">Nature</button>
+                    </div>
+                    <div id="reminder-settings">
+                        <h3>Reminders</h3>
+                        <label>
+                            <input type="checkbox" id="enable-reminders"> Enable daily reminders
+                        </label>
+                        <input type="time" id="reminder-time" value="20:00">
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div id="notification" class="hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>
