@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
+
+
+*{
+    font-family:'Poppins', sans-serif ;
+    margin: 0;
+    border: 0;
+}
+
+.mainbox{
+    position: relative;
+    background: url('pcimg.png');
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.mainbox .sidebar_menu{
+    position: fixed;
+    height: 100vh;
+    width: 280px;
+    left: -280px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px  rgba(255, 255, 255, 0.103);
+    /* opacity: 0.7; */
+}
+
+.sidebar_menu .logo a{
+    position: absolute;
+    height: 60px;
+    color: white;
+    font-size: 25px;
+    left: 50px;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+ul li{
+    position: relative;
+    top: 50px;
+    list-style: none;
+    line-height: 40px;
+    text-decoration: none;
+    transition: all 0.3s linear;
+}
+
+ul li a{
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.3s linear;
+}
+ul li i{
+    padding-right: 10px;
+}
+
+.sidebar_menu .menu li:hover{
+    border-left: 1px solid white;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.socialmedia{
+    position: relative;
+    bottom: -100px;
+}
+
+.socialmedia i{
+    position: relative;
+    left: 40px;
+    margin: 5px;
+    font-size: 20px;
+    color: white;
+    opacity: 0.5;
+    transition: all 0.3s  linear;
+}
+
+.socialmedia i:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+#check{
+    display: none;
+}
+
+.btn1 li{
+    color: white;
+    position: absolute;
+    font-size: 25px;
+    line-height: 60px;
+    left: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.btn2 li{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    font-size: 25px;
+    line-height: 60px;
+    left: 223px;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+ 
+#check:checked ~ .sidebar_menu{
+    left: 0px;
+    transition: all 0.3s  linear;
+}
+
+#check:checked ~ .btn1 li {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#check:checked ~ .btn2 li {
+    opacity: 1;
+    visibility: visible;
+}
